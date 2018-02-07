@@ -12,7 +12,6 @@ pipeline {
         stage('Test') {
             steps{
                 sh './gradlew test'
-                sh 'docker ps -a'
             }
         }
         
