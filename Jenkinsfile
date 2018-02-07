@@ -7,9 +7,15 @@ pipeline {
             }
         }
 
-        stage('Test') {
+        stage('Unit Test') {
             steps{
                 sh './gradlew test'
+            }
+        }
+        
+        stage('Build docker image') {
+            steps {
+                sh 'docker build'
             }
         }
         
