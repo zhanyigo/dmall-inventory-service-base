@@ -2,11 +2,6 @@ pipeline {
     agent any
     
     stages {
-        stage('repo clean up'){
-            steps {
-                step([$class: 'WsCleanup'])
-            }
-        }
 
         stage('build') {
             steps {
