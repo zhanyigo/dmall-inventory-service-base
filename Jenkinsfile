@@ -8,17 +8,27 @@ pipeline {
             }
         }
 
-        stage('Checkout') {
+        stage('build') {
             steps {
-                git poll: true, url: 'https://github.com/dmall-k8s-microservice/dmall-inventory-service-base.git', branch: 'master'
+                ./gradlew build
             }
-                
         }
 
-        stage('Build') {
+        stage('Test') {
             steps{
-                sh 'echo "building..."'
-                sh 'echo "clean..."'
+                ./gradlew test
+            }
+        }
+        
+        stage('DeployToST') {
+            steps {
+                echo 'ST deployed.'
+            }
+        }
+        
+        stage('DeployToUAT') {
+            steps {
+                echo 'UAT deployed'
             }
         }
     }
