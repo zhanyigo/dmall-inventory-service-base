@@ -1,3 +1,3 @@
 #!/bin/sh
 
-java -jar /work/app.jar
+java -jar /tmp/app.jar
