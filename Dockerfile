@@ -5,4 +5,4 @@ VOLUME /tmp
 ADD build/libs/inventory-service-*.jar /tmp/app.jar
 ADD run.sh /
 
-ENTRYPOINT ["/run.sh"]
+ENTRYPOINT ["sh /run.sh"]
