@@ -4,6 +4,7 @@ metadata:
   name: zhanyi-inventory
   labels:
     app: zhanyi-inventory
+    app-pod: zhanyi-inventory-pod
 spec:
   containers:
   - name: inventory-service
@@ -23,4 +24,4 @@ spec:
     protocol: TCP
     nodePort: 31400
   selector:
-    app: zhanyi-inventory
+    app-pod: zhanyi-inventory-pod
